@@ -1,3 +1,4 @@
+node('jnlp-slave') {}
 pipeline {
     agent any
 
