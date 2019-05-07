@@ -1,21 +1,25 @@
 pipeline {
-  node('jenkins-slave') {
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+  agent {
+    kubernetes {
+      label 'kube'
+    }
+  }
+
+  stages {
+    stage('Build') {
+      steps {
+          echo 'Building..'
+      }
+    }
+    stage('Test') {
+      steps {
+          echo 'Testing..'
+      }
+    }
+    stage('Deploy') {
+      steps {
+          echo 'Deploying....'
+      }
     }
   }
 }
