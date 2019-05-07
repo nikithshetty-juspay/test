@@ -1,4 +1,4 @@
-node('jnlp-slave') {}
+node('jenkins-slave') {}
 pipeline {
     agent any
 
