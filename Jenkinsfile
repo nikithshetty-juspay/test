@@ -1,7 +1,5 @@
-node('jenkins-slave') {}
 pipeline {
-    agent any
-
+  node('jenkins-slave') {
     stages {
         stage('Build') {
             steps {
@@ -19,4 +17,5 @@ pipeline {
             }
         }
     }
+  }
 }
